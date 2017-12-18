@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Playing With React</title>
+  </head>
+
+  <body>
+    <div id="tester"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+     <script type="text/babel">
+       const name = "SuperUser";
+
+       const age = 29;
+
+       class Flattery extends React.Component {
+         render() {
+           return (
+             <div>
+               <h2>Hello, {name}! You still look like you are {age}, no matter what anyone says.</h2>
+             </div>
+           );
+         }
+       }
+
+       ReactDOM.render(
+         <Flattery />, document.getElementById('tester')
+       );
+     </script>
+  </body>
+
+</html>
