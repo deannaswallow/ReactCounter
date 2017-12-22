@@ -15,17 +15,35 @@
        const age = 29;
 
        class Flattery extends React.Component {
+
+         constructor(props){
+           super(props);
+           this.state = {
+             number: 42
+           }
+         }
+
          render() {
            return (
              <div>
-               <h2>Hello, {name}! You still look like you are {age}, no matter what anyone says.</h2>
+               <h2>Hello, {this.props.name}! You still look like you are {this.props.age}, no matter what anyone says.</h2>
+               <p>The answer to life is {this.state.number}.</p>
              </div>
            );
          }
        }
 
+       const basics = {
+         name: "SuperUser",
+       }
+
+       Flattery.defaultProps = {
+         age: 29
+       }
+
        ReactDOM.render(
-         <Flattery />, document.getElementById('tester')
+         <Flattery
+           name={basics.name}/>, document.getElementById('tester')
        );
      </script>
   </body>
